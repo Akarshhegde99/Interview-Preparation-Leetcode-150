@@ -1,0 +1,22 @@
+class Solution{
+    public int removeElement(int nums[], int val){
+        int frontPointer = 0;
+        int backPointer = nums.length - 1;
+
+        while(frontPointer <= backPointer){
+            if(nums[frontPointer]!= val){
+                frontPointer++;
+                continue;
+            }
+
+            int temp = nums[frontPointer];
+            nums[frontPointer]= nums[backPointer];
+            nums[backPointer] = temp;
+            backPointer--;
+        }
+        return frontPointer;
+
+
+            
+    }
+} 
